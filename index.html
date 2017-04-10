@@ -67,10 +67,22 @@
 
 <script>
     $( document ).ready(function() {
-    var videoFile = Math.ceil(Math.random() * 16);
+    	var videoFile = Math.ceil(Math.random() * 16);
 	$('#vidmp4').attr('src', 'videos/'+videoFile+'.mp4');
 	$('#vidwebm').attr('src', 'videos/'+videoFile+'.webm');
 	$('#bgvid').load();
+	    
+	$('#login_box').fadeTo( "slow", 0.2 );
+
+    	$('#login_box').hover(function() {
+        	$("#login_box").fadeTo("slow", 1);
+        }, function() {
+                $("#login_box").delay(800).fadeTo("slow", 0.2);
+        }); 
+
+    	$('#entry').keypress(function() {
+        	$("#login_box").fadeTo("slow", 1);
+    	});
 });
     
 
